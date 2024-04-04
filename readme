@@ -1,0 +1,74 @@
+Fawn Walkthrough
+#Log in
+    *Put in UserName and Password
+
+#Connect to vpn Step 1
+    *Click Connections in top right
+    *Click Starting Point under Machines   
+    *Select VPN ACCESS location you are in (US)
+    *Select VPN SERVER - US StartingPoint1, 2, or 3 whichever has the least number of users
+    *Select TCP443 
+    *Click "Download VPN"
+
+#Connect to vpn Step 2
+    *Open downloads file
+    *Right click in folder in any open space and select _open terminal here_
+    *once terminal opens, type Sudo su and put in your password
+    *Then type 'ls' to verify file is present
+    *Then type 'openvpn (file name of downloaded file from Hack the Box)'
+    *Hit Enter
+
+#Hacking the box
+    *Open another terminal
+        _Click File in the upper left side of the screen and open another terminal_
+    *Go to Hack the Box website you already have open and make sure the "Connections" button is green
+    *On the Home page of Hack The Box(click the house on the left of the screen if you need to go back from another page on the site) and click on _Starting Point_
+    *On the "Learn the basics of Penetration Testing", click on _Tier 0_ and click on the cat image with "Meow" listed under the picture
+    *Once the drop down expands, click on "Start Machine" button, can take up to a minute to start up
+
+    *Steps to hack the box
+    Step 1: type 'Ping (target IP)' in terminal
+        - answer for task 4
+    Step 2: type 'Nmap -sV (target IP)' terminal
+        - this gives you the answer for Task 2, task 5, and task 6
+    Step 3: type 'ftp (target IP)', it asks for a username: 
+        - ftp has an issue with allowing 'anonymous' as a username without a password assigned, try anonymous and hit enter, for password hit enter
+        - this gives you the answer for task 8 and 9
+    Step 4: type ls
+            - this is the answer for task 10
+        - this shows only 1 file: flag.txt
+        - you CANNOT use cat here, you have to first 'get' the file 
+            - this is the answer for task 11
+        - type 'get' flag.txt
+            - this will download the file to your directory
+        - type 'bye' in ftp cmd line to get out
+    Step 5: type 'ls' in command line and see you have the flag.txt file in your directory
+    Step 6: type cat flag.txt
+        - this gives you the answer for task 12
+        035db21c881520061c53e0536e44f815
+
+        Task 1 - FTP stands for: File Transfer Protocol
+            Look  up on google, if you do not know
+
+        Task 2 - FTP service is on port 21
+
+        Task 3 - SFTP - secure File Transfer Protcol           
+
+        Task 4 - Ping
+           
+        Task 5 - vsftpd 3.0.3  
+
+        Task 6 - Unix
+        
+        Task 7 - ftp -h
+
+        Task 8 - anonymous
+
+        Task 9 - 230
+
+        Task 10 - ls
+
+        Task 11 - get
+
+        Task 12 - flag
+        035db21c881520061c53e0536e44f815 
